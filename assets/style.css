@@ -1,0 +1,89 @@
+:root{
+  --ground:#FBFBF9;--surface:#FFFFFF;--surface-2:#F1F2EE;
+  --ink:#1A1D1A;--ink-soft:#4F5750;--ink-faint:#80897F;
+  --line:#E0E3DC;--line-strong:#C4CABF;
+  --accent:#2F5D3A;--accent-ink:#234A2C;--accent-wash:#E8F0E8;
+  --flag:#8A5A12;--flag-wash:#FAF2E4;
+  --measure:68ch;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#121410;--surface:#1A1D18;--surface-2:#222620;
+  --ink:#EDEFE9;--ink-soft:#AEB6AB;--ink-faint:#848C82;
+  --line:#2C312A;--line-strong:#3C433A;
+  --accent:#7FBF8C;--accent-ink:#9BD2A6;--accent-wash:#1A2A1D;
+  --flag:#D9A857;--flag-wash:#2A2316;
+}}
+:root[data-theme="dark"]{
+  --ground:#121410;--surface:#1A1D18;--surface-2:#222620;
+  --ink:#EDEFE9;--ink-soft:#AEB6AB;--ink-faint:#848C82;
+  --line:#2C312A;--line-strong:#3C433A;
+  --accent:#7FBF8C;--accent-ink:#9BD2A6;--accent-wash:#1A2A1D;
+  --flag:#D9A857;--flag-wash:#2A2316;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:Georgia,"Iowan Old Style","Times New Roman",serif;
+  font-size:18px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 20px 80px}
+.wrap-wide{max-width:900px}
+h1,h2,h3,.ui,th,nav,.masthead,.btn,figcaption,.card h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.masthead{border-bottom:1px solid var(--line);background:var(--surface)}
+.masthead-in{max-width:900px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent)}
+.masthead nav a{font-size:13px;color:var(--ink-soft);text-decoration:none;margin-left:16px}
+.masthead nav a:hover{text-decoration:underline}
+.disclosure{background:var(--surface-2);border-bottom:1px solid var(--line);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+.disclosure div{max-width:var(--measure);margin:0 auto;padding:12px 20px}
+.disclosure strong{color:var(--ink)}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;margin:34px 0 14px;text-wrap:balance}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-soft);margin:0 0 22px}
+.byline{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:13.5px;color:var(--ink-faint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:12px 0;margin:0 0 30px;display:flex;gap:18px;flex-wrap:wrap}
+h2{font-size:23px;line-height:1.25;letter-spacing:-.015em;margin:40px 0 12px;text-wrap:balance}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 18px}
+a{color:var(--accent-ink)}
+ul,ol{padding-left:22px;margin:0 0 18px}
+li{margin-bottom:8px}
+.verdict{background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:4px 24px 20px;margin:28px 0}
+.verdict h2{font-size:17px;margin:20px 0 10px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-faint)}
+.verdict ul{list-style:none;padding:0;margin:0 0 6px}
+.verdict li{padding-left:24px;position:relative;font-size:17px}
+.verdict li::before{position:absolute;left:0;top:0;font-weight:700}
+.verdict .yes li::before{content:"+";color:var(--accent)}
+.verdict .no li::before{content:"\2013";color:var(--flag)}
+table{border-collapse:collapse;width:100%;font-size:16px;margin:18px 0}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-faint);
+  text-align:left;padding:0 12px 8px 0;border-bottom:1.5px solid var(--line-strong)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
+td:first-child{font-weight:600}
+.tw{overflow-x:auto}
+.flag{background:var(--flag-wash);border-left:3px solid var(--flag);padding:16px 20px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.flag p:last-child{margin-bottom:0}
+.flag b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:15px}
+.cta{background:var(--accent-wash);border:1px solid var(--accent);border-radius:6px;padding:24px;margin:34px 0;text-align:center}
+.cta p{font-size:16px;color:var(--ink-soft);margin:0 0 16px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:14px 28px;border-radius:5px}
+.btn:hover{opacity:.92}
+:root[data-theme="dark"] .btn{color:#10140F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#10140F}}
+.cta small{display:block;margin-top:12px;font-size:13px;color:var(--ink-faint);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column}
+.card .kicker{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.card h3{font-size:19px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover{color:var(--accent-ink)}
+.card p{font-size:15.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 14px}
+.card .more{margin-top:auto;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:13.5px;font-weight:600;text-decoration:none}
+.lede-home{font-size:21px;line-height:1.5;color:var(--ink-soft);max-width:60ch;margin:0 0 10px}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-top:24px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:13px;line-height:1.6;color:var(--ink-faint)}
+footer p{margin:0 0 12px}
+footer a{color:var(--ink-soft)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
